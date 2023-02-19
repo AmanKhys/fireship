@@ -35,4 +35,7 @@ const txt =  await readFile('./hello.txt', 'utf8');console.log(txt);
 helloo()
 console.log('do this ASAP');
 
-
+//modules .. npm
+//common js require() ... es modules import/export
+const myModule = require('./my-module');
+console.log(myModule.science);
