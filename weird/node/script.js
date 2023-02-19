@@ -3,7 +3,7 @@ process.env.USER;//=
 
 
 const {EventEmitter} = require('events'); 
-const { readFile } = require('fs');
+// const { readFile } = require('fs');
 const eventEmitter = new EventEmitter();
 console.log(eventEmitter);
 eventEmitter.on('lunch', () => {
@@ -25,13 +25,14 @@ eventEmitter.emit('lunch');
 // readFile('./hello.txt','utf-8', (err,txt) => {
 //     console.log(err,txt);
 // });
+// Promise based, also non-blocking
+const { readFile } = require('fs').promises;
 
-const {readFile} = require('fs').promises;
-async function hello(){
-    const file = await readFile('./hello.txt', 'utf-8');
-    console.log(file);
-}
-hello();
+async function helloo(){
+const txt =  await readFile('./hello.txt', 'utf8');console.log(txt);
+
+};
+helloo()
 console.log('do this ASAP');
 
 
